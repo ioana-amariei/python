@@ -1,0 +1,13 @@
+.\.idea\workspace.xml | UNKNOWN
+.\environment.txt | FILE
+.\problem1.py | FILE
+.\problem2.py | FILE
+.\problem3.py | FILE
+.\problem4.py | FILE
+.\problem5.py | FILE
+.\recursive.txt | FILE
+.\.idea\lab5.iml | UNKNOWN
+.\.idea\misc.xml | UNKNOWN
+.\.idea\modules.xml | UNKNOWN
+.\.idea\vcs.xml | UNKNOWN
+.\.idea\workspace.xml | UNKNOWN
