@@ -36,7 +36,7 @@ def magic(x):
 
 def magic_firsts(n):
     return [magic(x) for x in range(0, n + 1)]
-    
+
 
 print(sum_first(10))
 print(number_of_occurrences([1, 10, 20]))
