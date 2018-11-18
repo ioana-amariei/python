@@ -34,16 +34,10 @@ def create_set_operations_dictionary(*sets):
             diff1 = current_set.difference(next_set)
             diff2 = next_set.difference(current_set)
 
-            print(intersection)
-            print(union)
-            print(diff1)
-            print(diff2)
-
-            dictionary.update({current_set + " & " + next_set, intersection})
-            print(dictionary)
-            dictionary.update({current_set + " | " + next_set, union})
-            dictionary.update({current_set + " - " + next_set, diff1})
-            dictionary.update({current_set + " & " + next_set, diff2})
+            dictionary.update({str(current_set) + " & " + str(next_set): intersection})
+            dictionary.update({str(current_set) + " | " + str(next_set): union})
+            dictionary.update({str(current_set) + " - " + str(next_set): diff1})
+            dictionary.update({str(next_set) + " - " + str(current_set): diff2})
 
     return dictionary
 
