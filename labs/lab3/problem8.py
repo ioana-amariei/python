@@ -6,8 +6,8 @@
 
 def get_tuple(input_set):
     uniques = [e for e in input_set if input_set.count(e) < 2]
-    duplicates = list(set([e for e in input_set if input_set.count(e) > 1]))
-    return uniques, duplicates
+    duplicates = set([e for e in input_set if input_set.count(e) > 1])
+    return len(uniques), len(duplicates)
 
 
 print(get_tuple([1, 2, 3, 4, 1, 2, 5, 4, 6, 7]))

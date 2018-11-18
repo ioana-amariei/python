@@ -10,16 +10,14 @@
 # 	In its canonical textual representation, the sixteen octets of a UUID are represented as 32 hexadecimal (base 16)
 #   digits, displayed in five groups separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters
 # 	(32 alphanumeric characters and four hyphens). (wiki)
+import traceback
 
 
 def sort_uuids():
     read_fd = open('sample.txt', 'r')
     try:
         uuids = read_fd.readlines()
-        try:
-            uuids.sort(key=lambda uuid: uuid.split('-')[1])
-        except Exception as e:
-            print(e)
+        uuids.sort(key=lambda uuid: uuid.split('-')[1])
 
         write_fd = open('results.txt', 'w+')
         write_fd.writelines(uuids)
@@ -27,6 +25,7 @@ def sort_uuids():
 
     except Exception as e:
         print(e)
+        traceback.print_exc()
     finally:
         read_fd.close()
 

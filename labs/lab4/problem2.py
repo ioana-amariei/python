@@ -2,21 +2,27 @@
 #  (if there is any).
 # 	This modification means to replace the bad line with this message "|INVALID_UUID|".
 # 	You may use the file cursor to make the changes (seek or tell)
+import re
 
 
 def replace_invalid_format_line():
-    read_fd = open("sample.txt", "r")
-    write_fd = open("updated.txt", "w+")
+    f = open("updated.txt", "r")
+    line_regex = re.compile("[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}")
 
-    content = read_fd.readlines()
-    for line in content:
-        if len(line) < 37 or len(line) > 37:
-            write_fd.write("|INVALID_UUID|\n")
+    updated_lines = []
+
+    for line in f:
+        if line_regex.match(line):
+            updated_lines.append(line)
         else:
-            write_fd.write(line)
+            updated_lines.append("|INVALID_UUID|\n")
 
-    write_fd.close()
-    read_fd.close()
+    f.close()
+
+    f = open("updated.txt", "w")
+    for line in updated_lines:
+        f.write(line)
+    f.close()
 
 
 replace_invalid_format_line()

@@ -8,31 +8,30 @@
 # 	Functia va returna True daca dictionarul dat ca parametru respecta toate regulile, False in caz contrar.
 
 # 	Exemplu: regulile [("key1", "", "inside", ""), ("key2", "start", "middle", "winter")] si
-# 	dictionarul {"key2": "starting the engine in the middle of the winter", "key1": "come inside, it's too cold outside", "key3": "this is not valid"} => False
+# 	dictionarul {"key2": "starting the engine in the middle of the winter",
+#   "key1": "come inside, it's too cold outside", "key3": "this is not valid"} => False
 # 	deoarece desi regulile sunt respectate pentru "key1" si "key2", apare "key3" care nu apare in reguli.
 
 
-def valid_value(prefix, middle, suffix, value):
+def is_valid_value(prefix, middle, suffix, value):
     return value.startswith(prefix) \
            and middle in value \
-           and value.endswith(suffix)
+           and value.endswith(suffix) \
+           and not value.startswith(middle) \
+           and not value.endswith(middle)
 
 
 def validate_dict(validation_rules, dictionary):
-    rule_keys = set([k for k in validation_rules[0][0]])
-    dictionary_keys = set(dictionary.keys())
-
-    if len(rule_keys.intersection(dictionary_keys)) < len(validation_rules):
-        return False
-
-    for rule in validation_rules:
-        key = rule[0]
-        value = dictionary[key]
-        prefix = rule[1]
-        middle = rule[2]
-        suffix = rule[3]
-        if valid_value(prefix, middle, suffix, value) is not True:
+    dictionary_copy = dictionary.copy()
+    for key, prefix, middle, suffix in validation_rules:
+        if key not in dictionary:
             return False
+        if is_valid_value(prefix, middle, suffix, dictionary[key]) is not True:
+            return False
+        dictionary_copy.pop(key)
+
+    if len(dictionary_copy) is not 0:
+        return False
 
     return True
 

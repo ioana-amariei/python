@@ -17,6 +17,7 @@
 # 				...
 #
 # 			}
+from pprint import PrettyPrinter
 
 
 def create_set_operations_dictionary(*sets):
@@ -25,21 +26,21 @@ def create_set_operations_dictionary(*sets):
     sets = list(sets)
 
     for i in range(0, length):
-        current_set = sets[i]
-        for j in range(1, length):
-            next_set = sets[j]
+        a = sets[i]
+        for j in range(i + 1, length):
+            b = sets[j]
 
-            intersection = current_set.intersection(next_set)
-            union = current_set.union(next_set)
-            diff1 = current_set.difference(next_set)
-            diff2 = next_set.difference(current_set)
+            intersection = a.intersection(b)
+            union = a.union(b)
+            diff1 = a.difference(b)
+            diff2 = b.difference(a)
 
-            dictionary.update({str(current_set) + " & " + str(next_set): intersection})
-            dictionary.update({str(current_set) + " | " + str(next_set): union})
-            dictionary.update({str(current_set) + " - " + str(next_set): diff1})
-            dictionary.update({str(next_set) + " - " + str(current_set): diff2})
+            dictionary.update({str(a) + " & " + str(b): intersection})
+            dictionary.update({str(a) + " | " + str(b): union})
+            dictionary.update({str(a) + " - " + str(b): diff1})
+            dictionary.update({str(b) + " - " + str(a): diff2})
 
     return dictionary
 
-
-print(create_set_operations_dictionary({1, 2, 3}, {1, 4, 5}, {3, 4}))
+pp = PrettyPrinter(indent=4)
+pp.pprint(create_set_operations_dictionary({1, 2, 3}, {1, 4, 5}, {3, 4}))

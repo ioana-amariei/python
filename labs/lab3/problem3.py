@@ -9,10 +9,10 @@
 
 
 def compare_dictionaries(first, second):
-    common_keys_different_values = list(set(x for x in first.keys() for x in second.keys() if first.get(x) != second.get(x)))
+    common_keys_different_values = [x for x in first.keys() if x in second and first.get(x) != second.get(x)]
 
-    keys_from_first = set(x for x in first.keys())
-    keys_from_second = set(x for x in second.keys())
+    keys_from_first = set(first.keys())
+    keys_from_second = set(second.keys())
 
     keys_from_first_only = list(keys_from_first.difference(keys_from_second))
     keys_from_second_only = list(keys_from_second.difference(keys_from_first))

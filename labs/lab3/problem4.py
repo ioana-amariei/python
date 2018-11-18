@@ -5,16 +5,16 @@
 # 	"<a href=\"http://python.org\" _class=\"my-link\" id=\"someid\">Hello there</a>"
 
 
-def build_xml_element(tag, content, dictionary):
+def build_xml_element(tag, content, **attributes):
     start_tag = "<" + tag + " "
     end_tag = "</" + tag + ">"
 
-    xml_element = start_tag
-    for key in dictionary:
-        xml_element += key + "=\\\"" + dictionary.get(key) + "\\\" "
-    xml_element += ">" + content + end_tag
+    attrs = ""
+    for key, value in attributes.items():
+        attrs += key + "=\\\"" + value + "\\\" "
 
-    return xml_element
+    return start_tag + attrs + ">" + content + end_tag
 
 
-print(build_xml_element("a", "Hello there", {"href": "http://python.org", "_class": "my-link", "id": "someid"}))
+# print(build_xml_element("a", "Hello there", {"href": "http://python.org", "_class": "my-link", "id": "someid"}))
+print(build_xml_element("a", "Hello there", href="http://python.org", _class="my-link", id="someid"))
