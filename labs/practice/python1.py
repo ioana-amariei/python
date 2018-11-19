@@ -1,11 +1,12 @@
 from pathlib import Path
+import sys
+import os
+
+# https://docs.python.org/2/tutorial/modules.html
+# if __name__ => __main__ (for execution),
+# if __name__ => __file-name__ (import)
 
 if __name__ == "__main__":
-    # https://docs.python.org/2/tutorial/modules.html
-    # if __name__ => __main__ (for execution),
-    # if __name__ => __file-name__ (import)
-    import sys
-
     if len(sys.argv) > 1 and sys.argv[1] == "-h":
         print("Help")
 
@@ -48,7 +49,7 @@ def problema4(m):
 
 
 def problema5(my_list):
-    return [x for x in set(my_list) if x % 7 == 0]
+    return [x for x in my_list if x % 7 == 0 and my_list.count(x) < 2]
 
 
 def get_python_paths(folder):
@@ -81,10 +82,29 @@ def problem7(director, depth):
     return [a for a in get_dir_paths(director, depth) if len(get_python_paths(a)) > 0]
 
 
+def problem6(folder, fisier):
+    if not os.path.isdir(folder):
+        raise ValueError
+    if not os.path.isfile(fisier):
+        raise ValueError
+
+    dirs_and_files = os.listdir(folder)
+    full_path_name = os.path.abspath(folder)
+    for elem in dirs_and_files:
+        if os.path.isfile(elem):
+            try:
+                f = open(fisier, "a+")
+                if ".py" in elem:
+                    f.write(os.path.join(full_path_name, elem) + '\n')
+                f.close()
+            except Exception as e:
+                print(str(e))
+
+
 print(problema2())
 print(problema3(123))
 print(problema3(121))
 print(problema4(100))
-print(problema5([2, 3, 4, 7, 14, 21]))
-problema6(".", "problema6.txt")
+print(problema5([2, 3, 4, 7, 14, 21, 21]))
+problem6(".", "problema6.txt")
 print(problem7("C:\\facultate\\an3\\sem1", 2))

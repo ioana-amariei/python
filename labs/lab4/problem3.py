@@ -15,7 +15,7 @@ def compute_results():
 
     result = None
     for line in lines:
-        a, b, c = line.strip().split(" ")
+        a, b, c = line.strip().split(' ')
         a, b = int(a), int(b)
         if c == "+":
             result = a + b

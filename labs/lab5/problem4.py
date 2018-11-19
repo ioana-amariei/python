@@ -9,11 +9,11 @@ import os
 
 def browse_recursively(path):
     try:
+        print(path)
         if os.path.isdir(path):
             files_and_dirs = os.listdir(path)
             for elem in files_and_dirs:
-                print(elem)
-                browse_recursively(elem)
+                browse_recursively(os.path.join(path, elem))
     except IOError:
         print("Invalid path")
 

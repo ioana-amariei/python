@@ -42,5 +42,6 @@ def create_set_operations_dictionary(*sets):
 
     return dictionary
 
+
 pp = PrettyPrinter(indent=4)
 pp.pprint(create_set_operations_dictionary({1, 2, 3}, {1, 4, 5}, {3, 4}))

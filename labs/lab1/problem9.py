@@ -48,29 +48,18 @@ def largest_prime_number(string):
         return -1
 
     first_figure_index = get_index(string)
-    largest_prime = -1
+    primes = [-1]
     number = 0
 
     for index in range(first_figure_index, len(string)):
         while is_number(string[index]):
             number = number * 10 + int(string[index])
             index += 1
-        if is_largest_prime(largest_prime, number):
-            largest_prime = number
-        number = reset(number)
+        primes.append(number)
+        number = 0
 
-    return largest_prime
-
-
-def reset(number):
-    number = 0
-    return number
+    return max(primes)
 
 
-def is_largest_prime(largest_prime, number):
-    return is_prime(number) and number > largest_prime
-
-
-print("Largest prime number in 'ahsfaisd35biaishai23isisvdshcbsi271cidsbfsd97sidsda' is: ",
-      largest_prime_number('ahsfaisd35biaishai23isisvdshcbsi271cidsbfsd97sidsda'))
-print("Largest prime number in 'abcds' is: ", largest_prime_number('abcds'))
+print(largest_prime_number('ahsfaisd35biaishai23isisvdshcbsi271cidsbfsd97sidsda'))
+print(largest_prime_number('abcds'))

@@ -8,7 +8,7 @@
 # 	primite ca input.
 
 
-def generate_by_condition(strings, x=1, flag=True):
+def generate_by_condition(x=1, flag=True, *strings):
     generated_lists = []
 
     for string in strings:
@@ -20,4 +20,4 @@ def generate_by_condition(strings, x=1, flag=True):
     return generated_lists
 
 
-print(generate_by_condition(["test", "hello", "lab002"], 2, False))
+print(generate_by_condition(2, False, "test", "hello", "lab002"))

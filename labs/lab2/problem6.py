@@ -4,7 +4,7 @@
 # 	 1 se afla in lista 1 si 4, 2 se afla in lista 1 si 2, 3 se afla in listele 1 si 2, 4 se afla in listele 2 si 3.
 
 
-def elements(lists, x):
+def elements(x, *lists):
     flatten = []
     for l in lists:
         flatten += l
@@ -12,4 +12,4 @@ def elements(lists, x):
     return [e for e in set(flatten) if flatten.count(e) == x]
 
 
-print(elements([[1,2,3], [2,3,4], [4,5,6], [4, 1, "test"]], 2))
+print(elements(2, [1, 2, 3], [2, 3, 4], [4, 5, 6], [4, 1, "test"]))

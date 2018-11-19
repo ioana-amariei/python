@@ -2,15 +2,8 @@
 
 
 def number_of_vowels(characters):
-    count = 0
-    for char in characters:
-        if is_vowel(char):
-            count += 1
-    return count
-
-
-def is_vowel(character):
-    return character in 'aeiouAEIOU'
+    vowels = [c for c in characters if c in 'aeiouAEIOU']
+    return len(vowels)
 
 
 print("number of vowels: ", number_of_vowels("uafhcifqknGUYS"))

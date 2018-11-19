@@ -35,7 +35,7 @@ def magic(x):
 
 
 def magic_firsts(n):
-    return [magic(x) for x in range(0, n + 1)]
+    return [(x, magic(x)) for x in range(0, n + 1)]
 
 
 print(sum_first(10))

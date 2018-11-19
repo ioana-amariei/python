@@ -14,7 +14,7 @@ def number_of_words_from(string):
             string = string.replace(character, ' ')
 
     words = string.split(' ')
-    return words
+    return len(words)
 
 
 print("number of words: ", number_of_words_from("bdc!dijfvn.kfke"))

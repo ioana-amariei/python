@@ -16,17 +16,27 @@ if len(sys.argv) < 3 or len(sys.argv) > 3:
 path = sys.argv[1]
 file_to_write = sys.argv[2]
 
-for (root, directories, files) in os.walk("."):
+for (root, directories, files) in os.walk(path):
     for fileName in files:
         full_fileName = os.path.join(root, fileName)
         try:
             f = open(file_to_write, "a+")
-            if os.path.isdir(fileName):
-                f.write(full_fileName + " | " + "DIRECTORY\n")
-            elif os.path.isfile(fileName):
+            if os.path.isfile(fileName):
                 f.write(full_fileName + " | " + "FILE\n")
             else:
                 f.write(full_fileName + " | " + "UNKNOWN\n")
             f.close()
         except Exception as e:
             print(str(e))
+
+        for directoryName in directories:
+            full_directoryName = os.path.join(root, directoryName)
+            try:
+                f = open(file_to_write, "a+")
+                if os.path.isdir(directoryName):
+                    f.write(full_directoryName + " | " + "DIRECTORY\n")
+                else:
+                    f.write(full_directoryName + " | " + "UNKNOWN\n")
+                f.close()
+            except Exception as e:
+                print(str(e))
