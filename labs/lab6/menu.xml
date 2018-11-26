@@ -1,0 +1,14 @@
+<breakfast_menu>
+    <food>
+        <name coin="euros" recommendations="true">Belgian Waffles</name>
+        <price coin="euros" recommendations="true" fast="true">5.95</price>
+        <description>Two of our famous Belgian Waffles with plenty of real maple syrup</description>
+        <calories coin="euros" recommendations="true" fast="true">650</calories>
+    </food>
+    <food>
+        <name>Strawberry Belgian Waffles</name>
+        <price coin="dollars" recommendations="false">7.95</price>
+        <description detailed="true">Light Belgian waffles covered with strawberries and whipped cream</description>
+        <calories>900</calories>
+    </food>
+</breakfast_menu>
