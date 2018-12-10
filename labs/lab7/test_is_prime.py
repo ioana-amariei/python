@@ -32,6 +32,3 @@ def is_prime_optimized_time():
 
 is_prime_time()
 is_prime_optimized_time()
-
-
-
