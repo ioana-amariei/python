@@ -16,12 +16,17 @@ for item in files_and_dirs:
     if os.path.isfile(path):
         files.append(item)
 
+zip = zipfile.ZipFile(archive_path, 'w')
 for file in files:
     path = os.path.join(root, file)
     file_size = os.path.getsize(path)
     creation_time = os.path.getmtime(path)
     if file_size < max_size and creation_time < max_time:
-        zip = zipfile.ZipFile(archive_path, 'a')
-        zip.write(archive_path, os.path.basename(path))
-        zip.close()
+        zip.write(path, os.path.basename(path))
+        zip.printdir()
+
+zip.close()
+
+
+
 
