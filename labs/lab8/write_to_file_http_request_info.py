@@ -25,6 +25,7 @@ else:
     info = response.info()
     end = time.time()
 
+    # TODO: write info to file
     content = response.read().decode('utf-8')
     print(content)
 
