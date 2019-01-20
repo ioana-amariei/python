@@ -18,47 +18,35 @@ args = parser.parse_args()
 PATH = sys.argv[1]
 
 
-def create_location_table(location_info):
-    connection = sqlite3.connect(':memory:')
+def create_tables():
+    connection = sqlite3.connect('files.db')
 
-    connection.execute("CREATE TABLE location(location_id, location)")
-    connection.executemany("INSERT INTO location(location_id, location) VALUES (?, ?)", location_info)
-
-    print('LOCATION TABLE\n')
-    cursor = connection.cursor()
-    for row in cursor.execute("SELECT location_id, location FROM location"):
-        print(row)
+    connection.execute("CREATE TABLE location(location_id INT, location FLOAT)")
+    connection.execute("CREATE TABLE files(file_id INT, location_id INT)")
+    connection.execute("CREATE TABLE file(file_id INT, file_name VARCHAR , file_size INT, creation_time REAL , md5_hash VARCHAR )")
 
     connection.commit()
     connection.close()
 
 
-def create_files_table(files_info):
-    connection = sqlite3.connect(':memory:')
+def insert_into_location(info):
+    connection = sqlite3.connect('files.db')
+    connection.executemany("INSERT INTO location(location_id, location) VALUES (?, ?)", info)
+    connection.commit()
+    connection.close()
 
-    connection.execute("CREATE TABLE files(file_id, location_id)")
-    connection.executemany("INSERT INTO files(file_id, location_id) VALUES (?, ?)", files_info)
 
-    print('FILES TABLE\n')
-    cursor = connection.cursor()
-    for row in cursor.execute("SELECT file_id, location_id FROM files"):
-        print(row)
+def insert_into_files(info):
+    connection = sqlite3.connect('files.db')
+    connection.executemany("INSERT INTO files(file_id, location_id) VALUES (?, ?)", info)
 
     connection.commit()
     connection.close()
 
 
-def create_file_table(file_info):
-    connection = sqlite3.connect(':memory:')
-
-    connection.execute("CREATE TABLE file(file_id, file_name, file_size, creation_time, md5_hash)")
-    connection.executemany("INSERT INTO file(file_id, file_name, file_size, creation_time, md5_hash) VALUES (?, ?, ?, ?, ?)", file_info)
-
-    print('FILE_INFO TABLE\n')
-    cursor = connection.cursor()
-    for row in cursor.execute("SELECT file_id, file_name, file_size, creation_time, md5_hash FROM file"):
-        print(row)
-
+def insert_into_file(info):
+    connection = sqlite3.connect('files.db')
+    connection.executemany("INSERT INTO file(file_id, file_name, file_size, creation_time, md5_hash) VALUES (?, ?, ?, ?, ?)", info)
     connection.commit()
     connection.close()
 
@@ -69,8 +57,9 @@ def get_files_from(location):
     for item in items:
         path = os.path.join(location, item)
         if os.path.isfile(path):
+            file_name = item
             # files must contain absolute path for each file
-            files.append((item, path))
+            files.append((file_name, path))
 
     return files
 
@@ -105,12 +94,13 @@ def add_files_info_to_tables(path):
         files_info = [(file_id, location_id)]
         file_info = [(file_id, file_name, file_size, file_creation_time, file_md5)]
 
-        create_location_table(location_info)
-        create_files_table(files_info)
-        create_file_table(file_info)
+        insert_into_location(location_info)
+        insert_into_files(files_info)
+        insert_into_file(file_info)
 
         location_id += 1
         file_id += 1
 
 
+create_tables()
 add_files_info_to_tables(PATH)
