@@ -6,15 +6,15 @@
 import os
 
 
-def write_to_file(file_name):
+def write_info_to(file_path):
     try:
-        f = open(file_name, "w+")
-        if os.path.isfile(file_name):
-            for e in os.environ:
-                f.write(e + "\t" + os.getenv(e) + "\n")
+        f = open(file_path, 'w+')
+        for elem in os.environ:
+            f.write(elem + '\t' + os.getenv(elem) + '\n')
+            print(elem + '\t' + os.getenv(elem) + '\n')
         f.close()
     except Exception as e:
         print(str(e))
 
 
-write_to_file("environment.txt")
+write_info_to('os_environment_info.txt')

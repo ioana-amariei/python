@@ -6,7 +6,6 @@
 
 import os
 
-
 def browse_recursively(path):
     try:
         print(path)

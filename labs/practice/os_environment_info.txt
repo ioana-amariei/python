@@ -1,0 +1,48 @@
+PROCESSOR_ARCHITEW6432	AMD64
+USERDOMAIN_ROAMINGPROFILE	DESKTOP-L36VO39
+PATH	C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Haskell\bin;C:\program-files\haskell\8.2.2\lib\extralibs\bin;C:\program-files\haskell\8.2.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\program-files\java\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\program-files\Git;C:\Program Files (x86)\MiKTeX\miktex\bin\x64\;C:\program-files\perl\c\bin;C:\program-files\perl\perl\site\bin;C:\program-files\perl\perl\bin;C:\program-files\Notepad++;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\program-files\k\K_DISTRIBUTION_DIR\bin;C:\Users\AMI\AppData\Roaming\Microsoft\Windows\Start Menu\Programs;C:\MinGW\bin;C:\cygwin64\bin;C:\program-files\haskell\8.2.2\mingw\bin;C:\facultate\an2\sem2\ip\programming-engineering\lab5;C:\program-files\sqlite;C:\program-files\gradle\gradle-4.7\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\program-files\node-js\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\Tesseract-OCR;C:\facultate\an3\sem1\PYTHON\installed-location\Scripts\;C:\facultate\an3\sem1\PYTHON\installed-location\;C:\program-files\python\Scripts\;C:\program-files\python\;C:\Ruby24-x64\bin;C:\Users\AMI\AppData\Roaming\cabal\bin;C:\Users\AMI\AppData\Roaming\local\bin;C:\Users\AMI\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\AMI\AppData\Local\Programs\Python\Python36-32\;C:\program-files\visual-studio-code\Microsoft VS Code\bin;C:\Users\AMI\AppData\Local\atom\bin;C:\Users\AMI\AppData\Local\Microsoft\WindowsApps;C:\Users\AMI\.dotnet\tools;C:\Users\AMI\AppData\Roaming\npm;C:\Users\AMI\AppData\Local\Yarn\bin
+PROCESSOR_LEVEL	6
+VS140COMNTOOLS	C:\program-files\visual-studio\Common7\Tools\
+SESSIONNAME	Console
+ALLUSERSPROFILE	C:\ProgramData
+PROCESSOR_ARCHITECTURE	x86
+PSMODULEPATH	C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+SYSTEMDRIVE	C:
+FLASK_ENV	development
+USERNAME	AMI
+PROGRAMFILES(X86)	C:\Program Files (x86)
+PATHEXT	.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW
+DRIVERDATA	C:\Windows\System32\Drivers\DriverData
+PROGRAMDATA	C:\ProgramData
+PROGRAMW6432	C:\Program Files
+VIRTUAL_ENV	C:\facultate\an3\sem1\python\labs\lab1
+HOMEPATH	\Users\AMI
+PROCESSOR_IDENTIFIER	Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+PROGRAMFILES	C:\Program Files (x86)
+PUBLIC	C:\Users\Public
+WINDIR	C:\WINDOWS
+LOCALAPPDATA	C:\Users\AMI\AppData\Local
+USERDOMAIN	DESKTOP-L36VO39
+LOGONSERVER	\\DESKTOP-L36VO39
+JAVA_HOME	C:\Program Files\Java\jdk1.8.0_161
+PROMPT	(lab1) $P$G
+ONEDRIVE	C:\Users\AMI\OneDrive
+APPDATA	C:\Users\AMI\AppData\Roaming
+STACK_ROOT	C:\sr
+VBOX_MSI_INSTALL_PATH	C:\program-files\virtual-box\
+COMMONPROGRAMFILES	C:\Program Files (x86)\Common Files
+FLASK_APP	doc_annotator
+OS	Windows_NT
+COMPUTERNAME	DESKTOP-L36VO39
+PROCESSOR_REVISION	5e03
+COMMONPROGRAMW6432	C:\Program Files\Common Files
+COMSPEC	C:\WINDOWS\system32\cmd.exe
+_OLD_VIRTUAL_PROMPT	$P$G
+_OLD_VIRTUAL_PATH	C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Haskell\bin;C:\program-files\haskell\8.2.2\lib\extralibs\bin;C:\program-files\haskell\8.2.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\program-files\java\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\program-files\Git;C:\Program Files (x86)\MiKTeX\miktex\bin\x64\;C:\program-files\perl\c\bin;C:\program-files\perl\perl\site\bin;C:\program-files\perl\perl\bin;C:\program-files\Notepad++;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\program-files\k\K_DISTRIBUTION_DIR\bin;C:\Users\AMI\AppData\Roaming\Microsoft\Windows\Start Menu\Programs;C:\MinGW\bin;C:\cygwin64\bin;C:\program-files\haskell\8.2.2\mingw\bin;C:\facultate\an2\sem2\ip\programming-engineering\lab5;C:\program-files\sqlite;C:\program-files\gradle\gradle-4.7\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\program-files\node-js\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\Tesseract-OCR;C:\facultate\an3\sem1\PYTHON\installed-location\Scripts\;C:\facultate\an3\sem1\PYTHON\installed-location\;C:\program-files\python\Scripts\;C:\program-files\python\;C:\Ruby24-x64\bin;C:\Users\AMI\AppData\Roaming\cabal\bin;C:\Users\AMI\AppData\Roaming\local\bin;C:\Users\AMI\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\AMI\AppData\Local\Programs\Python\Python36-32\;C:\program-files\visual-studio-code\Microsoft VS Code\bin;C:\Users\AMI\AppData\Local\atom\bin;C:\Users\AMI\AppData\Local\Microsoft\WindowsApps;C:\Users\AMI\.dotnet\tools;C:\Users\AMI\AppData\Roaming\npm;C:\Users\AMI\AppData\Local\Yarn\bin
+SYSTEMROOT	C:\WINDOWS
+TEMP	C:\Users\AMI\AppData\Local\Temp
+HOMEDRIVE	C:
+USERPROFILE	C:\Users\AMI
+TMP	C:\Users\AMI\AppData\Local\Temp
+COMMONPROGRAMFILES(X86)	C:\Program Files (x86)\Common Files
+NUMBER_OF_PROCESSORS	4

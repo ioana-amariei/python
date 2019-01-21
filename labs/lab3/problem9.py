@@ -5,17 +5,11 @@
 #           "a op b", unde a si b sunt doua seturi,
 #           iar op este operatorul aplicat: |, &, -.
 # 	Ex: {1,2}, {2, 3} =>
-#
 # 			{
-#
 # 				"{1, 2} | {2, 3}": 3,
-#
 # 				"{1, 2} & {2, 3}": 1,
-#
 # 				"{1, 2} - {2, 3}": 1,
-#
 # 				...
-#
 # 			}
 from pprint import PrettyPrinter
 
