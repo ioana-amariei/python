@@ -3,6 +3,10 @@ def sum_first(n):
 
 
 def number_of_occurrences(my_list):
+    return {(n, my_list.count(n)) for n in my_list}
+
+
+def number_of_digits_for_each_elem_in(my_list):
     return [(n, len(str(n))) for n in my_list]
 
 
@@ -39,7 +43,8 @@ def magic_firsts(n):
 
 
 print(sum_first(10))
-print(number_of_occurrences([1, 10, 20]))
+print(number_of_occurrences([1, 10, 20, 10, 1]))
+print(number_of_digits_for_each_elem_in([1, 10, 20]))
 print(elements_that_occur_in_all([[1, 2], [1, 5, 3, 2], [5, 2, 1]]))
 print(sum_squared(4))
 print(magic_firsts(111))

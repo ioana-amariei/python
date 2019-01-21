@@ -7,8 +7,6 @@ def is_delimiter(char):
 
 
 def number_of_words_from(string):
-    words = []
-
     for character in string:
         if is_delimiter(character):
             string = string.replace(character, ' ')
