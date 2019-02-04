@@ -3,9 +3,9 @@
 # caracterul underscore '_'.
 
 import re
+import os
 import urllib
 from urllib import request
-import os
 import hashlib
 import zipfile
 import socket
@@ -29,9 +29,9 @@ def problema1(s):
 
 def problema2(s, url):
     response = urllib.request.urlopen(url)
-    page_content = response.read()
+    content = response.read()
 
-    return s.encode() in page_content
+    return s.encode() in content
 
 
 # print(problema2("facebook", "https://mbasic.facebook.com/"))
@@ -46,31 +46,31 @@ def problema2(s, url):
 
 
 def problema3(path):
-    directories = os.listdir(path)
+    def hash(filepath, block_size=4096):
+        try:
+            hash = hashlib.md5()
+            f = open(filepath, 'rb')
+            while True:
+                data = f.read(block_size)
+                if len(data) is 0:
+                    break
+                hash.update(data)
+            f.close()
+            return hash.hexdigest()
+        except:
+            return ''
 
-    files = []
-    for element in directories:
-        full_path = os.path.join(path, element)
-        if os.path.isfile(full_path):
-            files.append(full_path)
-
+    files = os.listdir(path)
     md5 = []
-    for filename in files:
-        my_file = open(filename, 'rb')
-        hasher = hashlib.md5()
-        buf = my_file.read(65536)
 
-        while len(buf) > 0:
-            hasher.update(buf)
-            buf = my_file.read(65536)
-        my_file.close()
-
-        digest = hasher.hexdigest()
-        md5.append(digest)
+    for file in files:
+        file_path = os.path.join(path, file)
+        if os.path.isfile(file_path):
+            md5.append(hash(file_path))
 
     md5.sort()
-    return md5
 
+    return md5
 
 # print(problema3('C:\\facultate\\an3\\sem1\\python\\python\\labs'))
 
@@ -80,17 +80,17 @@ def problema3(path):
 # Sa se returneze o lista ordonata crescator cu numele fisierelor care au size dupa compresie mai mare de 1 KB
 # ( 1000 de bytes ).
 
-
 def problema4(path):
-    ordered_list = []
+    list = []
     z = zipfile.ZipFile(path)
+
     for i in z.infolist():
         if i.compress_size > 1000:
             name = os.path.basename(i.filename)
-            ordered_list.append(name)
+            list.append(name)
 
-    ordered_list.sort()
-    return ordered_list
+    list.sort()
+    return list
 
 
 # print(problema4('C:\\facultate\\an3\\sem1\\Introduction-to-.Net\\project\\CLMS\\CLMS\\clms.zip'))
@@ -110,13 +110,20 @@ def problema5(host, port, text):
         hash.update(text.encode())
         return hash.hexdigest()
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((host, port))
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((host, port))
 
-    sock.send(text.encode())
-    message = sock.recv(32).decode()
-    sock.send(get_sha256(message).encode())
-    message = sock.recv(32).decode()
+    s.send(text.encode())
+    message = s.recv(32).decode()
 
-    sock.close()
-    return message
+    hash_message = get_sha256(message)
+    s.send(hash_message.encode())
+
+    final_message = s.recv(32).decode()
+    s.close()
+
+    return final_message
+
+
+
+

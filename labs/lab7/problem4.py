@@ -2,71 +2,47 @@
 #   despre toate fisierele din acel director. Pentru fiecare fisier vor fi afisate urmatoarele informatii:
 #   nume_fisier, md5_fisier, sha256_fisier, size_fisier (in bytes), cand a fost creat fisierul
 #   (in format human-readable) si calea absoluta catre fisier.
-import os
-import hashlib
+import time
+import os, hashlib
 
 
-def md5_hash(path, block_size=65536):
-    my_file = open(path, 'rb')
-    hasher = hashlib.md5()
-    buf = my_file.read(block_size)
-
-    while len(buf) > 0:
-        hasher.update(buf)
+def files_info_to_json(path):
+    def hash(hash_type, path, block_size=65536):
+        my_file = open(path, 'rb')
+        hasher = 0
+        if hash_type is 'md5':
+            hasher = hashlib.md5()
+        elif hash_type is 'sha256':
+            hasher = hashlib.sha256()
+        else:
+            return
         buf = my_file.read(block_size)
-    my_file.close()
 
-    return hasher.hexdigest()
+        while len(buf) > 0:
+            hasher.update(buf)
+            buf = my_file.read(block_size)
+        my_file.close()
 
+        return hasher.hexdigest()
 
-def sha256_hash(path, block_size=65536):
-    my_file = open(path, 'rb')
-    hasher = hashlib.sha256()
-    buf = my_file.read(block_size)
+    elements = os.listdir(path)
 
-    while len(buf) > 0:
-        hasher.update(buf)
-        buf = my_file.read(block_size)
-    my_file.close()
+    for element in elements:
+        element_path = os.path.join(path, element)
+        creation_time = os.path.getmtime(element_path)
+        human_readable_time = time.localtime(creation_time)
 
-    return hasher.hexdigest()
-
-
-def get_files(directory):
-    files = []
-    items = os.listdir(directory)
-    for item in items:
-        path = os.path.join(directory, item)
-        if os.path.isfile(path):
-            files.append(item)
-
-    return files
-
-
-def files_info_to_json(directory):
-    f = open("info.json", "a+")
-    f.write("{\n")
-    f.write("\"files\":[\n")
-
-    files = get_files(directory)
-    for file in files:
-        path = os.path.join(directory, file)
-        file_name = file
-        md5 = md5_hash(path)
-        sha256 = sha256_hash(path)
-        file_size = os.path.getsize(path)
-        creation_time = os.path.getmtime(path)
-
-        f.write("{\n")
-        f.write("\"fileName\":" + "\"" + file_name + "\",\n")
-        f.write("\"md5\":" + "\"" + str(md5) + "\",\n")
-        f.write("\"sha256\":" + "\"" + str(sha256) + "\",\n")
-        f.write("\"fileSize\":" + "\"" + str(file_size) + "\",\n")
-        f.write("\"creationTime\":" + "\"" + str(creation_time) + "\",\n")
-        f.write("\"absolutePath\":" + "\"" + path + "\",\n")
-        f.write("},\n")
-
-    f.write("]\n}")
+        f = open('info.json', 'a')
+        if os.path.isfile(element_path):
+            f.write('{\n\t')
+            f.write('\"file_name\":\"' + element + '\",\n')
+            f.write('\"file_md5\":\"' + hash('md5', element_path) + '\",\n')
+            f.write('\"file_sha256\":\"' + hash('sha256', element_path) + '\",\n')
+            f.write('\"file_size\":\"' + str(os.path.getsize(element_path)) + '\",\n')
+            f.write('\"creation_time\":\"' + str(human_readable_time) + '\",\n')
+            f.write('\"absolute_path\":\"' + element_path + '\"\n')
+            f.write('},\n')
+        f.close()
 
 
-files_info_to_json("C:\\facultate\\an3\\sem1\\python\\python\\labs")
+files_info_to_json('C:\\facultate\\an3\\sem1\\python\\python\\labs')

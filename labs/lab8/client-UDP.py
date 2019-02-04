@@ -17,7 +17,7 @@ else:
         content += ' ' + word
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    print(content.encode('UTF-8'))
-    client_socket.sendto(content.encode('UTF-8'), (ADDRESS, PORT))
+    client_socket.connect((ADDRESS, PORT))
+    client_socket.send(content.encode())
 
     client_socket.close()

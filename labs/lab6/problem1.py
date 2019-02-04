@@ -4,7 +4,13 @@ import re
 
 
 def extract_words(text):
+    # pattern = re.compile('\w+\')
+    # words = re.findall(pattern, text)
+
+    # return words
+
     return re.split("[^a-z'A-Z0-9]+", text)
 
 
-# print(extract_words("Today I'm shopping for 2 notebooks and 10 kilos of onions"))
+print(extract_words("Today I'm shopping for 2 notebooks and 10 kilos of onions"))
+

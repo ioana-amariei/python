@@ -17,7 +17,7 @@ try:
 
     count = 1
     for image in images:
-        image_src = image.decode("utf-8")
+        image_src = image.decode()
         image_url = URL + image_src
         image_file = 'file' + str(count) + '.jpg'
         f = open(image_file, 'wb')

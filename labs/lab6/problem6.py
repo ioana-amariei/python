@@ -4,20 +4,17 @@ import re
 from problem1 import extract_words
 
 def censor(text):
-    # words = re.sub("[^\w]", " ",  text).split()
     words = extract_words(text)
     censored = []
+
     for word in words:
-        censoredWordCharList = list(word)
-        if re.match("^[aeiou].*[aeiou]$", word, flags=re.IGNORECASE):
-            for i in range(0, len(word)):
-                if i % 2 != 0:
-                    censoredWordCharList[i] = '*'
+        pattern = '^[aeiou].*[aeiou]$'
+        if re.match(pattern, word, flags=re.IGNORECASE):
+            word = word.replace(word[0], '*')
+            word = word.replace(word[len(word) - 1], '*')
+            censored.append(word)
 
-        censoredWord = "".join(censoredWordCharList)
-        censored.append(censoredWord)
-
-    return ' '.join(censored)
+    return censored
 
 
 print(censor("Ana is an effective online reader"))

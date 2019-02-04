@@ -1,24 +1,16 @@
-Time: 2.11078661742817 seconds
+Time: Thu Jan  1 02:00:42 1970 seconds
 Address: 127.0.0.1
-Port: 52367
-Length: 18
-Content:  'My good husband'
-md5 hash of content: 4b0807e11ea5dc7bc4802ce1f4d2892d
-sha256 hash of content: 36bbd2235cf8ecd7d6e1d7bdf5eb7e635b0259a79d838e24fc69728f3c6c1ea0
+Port: 56296
+Length: 13
+Content:  message test
+md5 hash of content: 70f6381eaea3d7a0beb9b50bcfd46294
+sha256 hash of content: 9bcc398d4783ea16b1030ca4844ad38c6cdff1e2e6c288fce9da6b3cb5289d8e
 -----------------------------------
-Time: 11.848648067267526 seconds
+Time: Thu Jan  1 02:00:14 1970 seconds
 Address: 127.0.0.1
-Port: 52368
-Length: 18
-Content:  'My good husband'
-md5 hash of content: 4b0807e11ea5dc7bc4802ce1f4d2892d
-sha256 hash of content: 36bbd2235cf8ecd7d6e1d7bdf5eb7e635b0259a79d838e24fc69728f3c6c1ea0
------------------------------------
-Time: 21.62952505354442 seconds
-Address: 127.0.0.1
-Port: 57884
-Length: 14
-Content:  'Hello there'
-md5 hash of content: 7a59ec374a52b2a8ee0b7ce87c384870
-sha256 hash of content: dbbc85028f3737eede14796049bee8d49a6fbdf87f337b0dec45fd4d46d1801f
+Port: 50525
+Length: 13
+Content:  message test
+md5 hash of content: 70f6381eaea3d7a0beb9b50bcfd46294
+sha256 hash of content: 9bcc398d4783ea16b1030ca4844ad38c6cdff1e2e6c288fce9da6b3cb5289d8e
 -----------------------------------

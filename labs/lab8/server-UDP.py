@@ -30,12 +30,12 @@ while True:
     (data, address) = server_socket.recvfrom(1024)
 
     data_length = len(data)
-    content = data.decode('UTF-8')
+    content = data.decode()
     md5_hash_of_content = compute_md5(content)
     sha256_hash_of_content = compute_sha256(content)
 
     my_file = open('message_from_client_info.txt', 'a+')
-    my_file.write('Time: ' + str(time.clock() - start) + ' seconds\n')
+    my_file.write('Time: ' + time.asctime(time.localtime(time.clock() - start)) + ' seconds\n')
     my_file.write('Address: ' + address[0] + '\n')
     my_file.write('Port: ' + str(address[1]) + '\n')
     my_file.write('Length: ' + str(data_length) + '\n')

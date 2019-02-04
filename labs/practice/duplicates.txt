@@ -1,0 +1,2 @@
+C:\facultate\an3\sem1\python\python\.gitignore
+C:\facultate\an3\sem1\python\python\lab-9.txt

@@ -50,21 +50,20 @@
 
 import os
 
-
 # 3. Scrieti o functie care primeste ca parametru un nume de fisier.
 # 	Aceasta va scrie in fisier datele din os.environ, fiecare linie continand cate o intrare din acest dictionar,
 # 	sub forma cheie [tab] valoare.
 
 
-def write_info_to(file_path):
-    try:
-        f = open(file_path, 'w+')
-        for elem in os.environ:
-            f.write(elem + '\t' + os.getenv(elem) + '\n')
-            print(elem + '\t' + os.getenv(elem) + '\n')
-        f.close()
-    except Exception as e:
-        print(str(e))
+# def write_info_to(file_path):
+#     try:
+#         f = open(file_path, 'w+')
+#         for elem in os.environ:
+#             f.write(elem + '\t' + os.getenv(elem) + '\n')
+#             print(elem + '\t' + os.getenv(elem) + '\n')
+#         f.close()
+#     except Exception as e:
+#         print(str(e))
 
 
 # write_info_to('os_environment_info.txt')
@@ -137,3 +136,36 @@ def write_info_to(file_path):
 # 	Scriptul va copia fisierul dat ca parametru in directorul dat ca parametru,
 #   utilizand un buffer de marimea celui de-al treilea parametru, in bytes.
 
+
+import sys
+import os
+
+if len(sys.argv) < 4:
+    raise IOError
+
+file_path = sys.argv[1]
+dir_path = sys.argv[2]
+buffer_size = int(sys.argv[3])
+
+if not os.path.isfile(file_path):
+    raise TypeError
+
+if not os.path.isdir(dir_path):
+    raise TypeError
+
+if buffer_size < 1:
+    raise TypeError
+
+try:
+    f_read = open(file_path, 'rb')
+    file_to_copy_name = os.path.basename(file_path)
+    file_copy_path = os.path.join(dir_path, file_to_copy_name)
+    f_write = open(file_copy_path, 'wb+')
+    data = f_read.read(buffer_size)
+    while data:
+        f_write.write(data)
+        data = f_read.read(buffer_size)
+    f_write.close()
+    f_read.close()
+except Exception as e:
+    print(str(e))

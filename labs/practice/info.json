@@ -1,0 +1,88 @@
+{
+	"file_name":".gitignore",
+"file_md5":"83ad4621abbdfeecbcd3216a3af8ff10",
+"file_sha256":"0d9c0ff2d77c24161bc9bd01056dc9d393884ce2a89e8a498ddcb77af77cbe1d",
+"file_size":"1493",
+"creation_time":"time.struct_time(tm_year=2018, tm_mon=11, tm_mday=14, tm_hour=15, tm_min=34, tm_sec=56, tm_wday=2, tm_yday=318, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\.gitignore"
+},
+{
+	"file_name":"dup.txt",
+"file_md5":"7fd87584bafcc5f9aa88cff9341a818e",
+"file_sha256":"c1ee5e7cd923f270da1295a05149dae4b32596da879ad1538e4e3276bd89a2fd",
+"file_size":"1454",
+"creation_time":"time.struct_time(tm_year=2018, tm_mon=12, tm_mday=10, tm_hour=9, tm_min=10, tm_sec=55, tm_wday=0, tm_yday=344, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\dup.txt"
+},
+{
+	"file_name":"lab-7.txt",
+"file_md5":"31491d02f4e1a1cca1bfd1c5c97804d8",
+"file_sha256":"e4b0118db4569c53a5ecef97780a485b02eb9d7c5e59b26649781a692a371c76",
+"file_size":"1465",
+"creation_time":"time.struct_time(tm_year=2019, tm_mon=1, tm_mday=19, tm_hour=16, tm_min=20, tm_sec=50, tm_wday=5, tm_yday=19, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\lab-7.txt"
+},
+{
+	"file_name":"lab-9.txt",
+"file_md5":"455e9c1f7f1ccc7299100f9885d2aee6",
+"file_sha256":"169e0d7cab97ac322c09e248bd2548a2ffc94bd3d1f97b12829ba202a44a9553",
+"file_size":"1383",
+"creation_time":"time.struct_time(tm_year=2019, tm_mon=1, tm_mday=19, tm_hour=16, tm_min=20, tm_sec=1, tm_wday=5, tm_yday=19, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\lab-9.txt"
+},
+{
+	"file_name":"lab1.txt",
+"file_md5":"7fd87584bafcc5f9aa88cff9341a818e",
+"file_sha256":"c1ee5e7cd923f270da1295a05149dae4b32596da879ad1538e4e3276bd89a2fd",
+"file_size":"1454",
+"creation_time":"time.struct_time(tm_year=2018, tm_mon=11, tm_mday=14, tm_hour=12, tm_min=26, tm_sec=28, tm_wday=2, tm_yday=318, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\lab1.txt"
+},
+{
+	"file_name":"lab2.txt",
+"file_md5":"2ba8557b453e954ee76b28cc344fbfbb",
+"file_sha256":"72acc6d5c0ae4ab3772853fc70a343a3588baeb0a5069e3005a7d0d59cc4bb6a",
+"file_size":"2803",
+"creation_time":"time.struct_time(tm_year=2018, tm_mon=11, tm_mday=14, tm_hour=12, tm_min=26, tm_sec=9, tm_wday=2, tm_yday=318, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\lab2.txt"
+},
+{
+	"file_name":"lab3.txt",
+"file_md5":"0ddb8968126df036f54be127efd71f0f",
+"file_sha256":"367c87320d9c10a70e923f156c2a0531a287307fc0860f2192cae8d575f6eb2b",
+"file_size":"4079",
+"creation_time":"time.struct_time(tm_year=2018, tm_mon=11, tm_mday=18, tm_hour=19, tm_min=12, tm_sec=1, tm_wday=6, tm_yday=322, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\lab3.txt"
+},
+{
+	"file_name":"lab4.txt",
+"file_md5":"9606adeab8890fb2f9370c5936c3db23",
+"file_sha256":"b97981aacd0f096bbf9528e149f4ae018c96ef53344b29e925e09b8ca4f0e7b8",
+"file_size":"1401",
+"creation_time":"time.struct_time(tm_year=2018, tm_mon=11, tm_mday=14, tm_hour=12, tm_min=31, tm_sec=24, tm_wday=2, tm_yday=318, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\lab4.txt"
+},
+{
+	"file_name":"lab5.txt",
+"file_md5":"c9b8f7cc0938b2fe4caa7ac65803ddee",
+"file_sha256":"79743f5c32b1628a5002953e29897c3067f0891bfe2938697807081aa9dca42a",
+"file_size":"6106",
+"creation_time":"time.struct_time(tm_year=2018, tm_mon=11, tm_mday=14, tm_hour=12, tm_min=36, tm_sec=19, tm_wday=2, tm_yday=318, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\lab5.txt"
+},
+{
+	"file_name":"lab6.txt",
+"file_md5":"f948e8549f8250f8ae0157718a8900e2",
+"file_sha256":"00fc29309206fb6b4834e671a13b8f3a9f36917e8b7cf5315e86c0543f627acd",
+"file_size":"1636",
+"creation_time":"time.struct_time(tm_year=2018, tm_mon=11, tm_mday=26, tm_hour=16, tm_min=27, tm_sec=42, tm_wday=0, tm_yday=330, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\lab6.txt"
+},
+{
+	"file_name":"lab8.txt",
+"file_md5":"4ff7a9df53270f1acb450e3ab5e6479b",
+"file_sha256":"02a546f262867e77677aad986e94c9c66f88a27821155046144b3b2624e973ce",
+"file_size":"1776",
+"creation_time":"time.struct_time(tm_year=2019, tm_mon=1, tm_mday=19, tm_hour=16, tm_min=19, tm_sec=12, tm_wday=5, tm_yday=19, tm_isdst=0)",
+"absolute_path":"C:\facultate\an3\sem1\python\python\labs\lab8.txt"
+},

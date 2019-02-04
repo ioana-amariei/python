@@ -7,7 +7,7 @@ import os
 # if __name__ => __file-name__ (import)
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "-h":
+    if len(sys.argv) > 1 and sys.argv[1] is "-h":
         print("Help")
 
 
